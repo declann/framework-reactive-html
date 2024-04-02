@@ -24,7 +24,7 @@ a palceholder in a wrapper:
 
 (the 'hello' text is added by JS @ bottom of page)
 
-If I edit text inside the wrapper div, the hot reload replaces the top element: not the more precise corresponding child element
+If I edit anything inside the wrapper div, the hot reload replaces the top element, removing the hello text
 
 </div>
 
