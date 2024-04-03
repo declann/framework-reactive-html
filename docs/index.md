@@ -20,16 +20,22 @@ toc: false
 
 a palceholder in a wrapper:
 
-<div id="placeholder"></div>
+```js
+const placeholder = html`<div id="placeholder"></div>`
+display(placeholder)
+display("width generator on wrapper element:")
+display(content_width)
+```
 
-(the 'hello' text is added by JS @ bottom of page)
-
-If I edit anything inside the wrapper div, the hot reload replaces the top element, removing the hello text
+**If I edit anything inside the wrapper div, the reactive width is set to 0**
 
 </div>
 
-```js echo
+```js
+placeholder; // force order dependency
 document.getElementById('placeholder').textContent = "hello";
 ```
 
-(real usecase is to maintain the state of a dynamic vega visual)
+```js
+const content_width = Generators.width(document.getElementById("wrapper"));
+```
